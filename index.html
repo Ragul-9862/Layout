@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moterverse</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow: scroll;
+      }
+      #fullscreen-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the image fills the screen without distortion */
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      id="fullscreen-image"
+      src="./1920w light.png"
+      alt="Fullscreen Layout"
+    />
+
+    <script>
+      const image = document.getElementById("fullscreen-image");
+
+      // Enter fullscreen mode on page load
+      document.addEventListener("DOMContentLoaded", () => {
+        if (image.requestFullscreen) {
+          image.requestFullscreen();
+        } else if (image.webkitRequestFullscreen) {
+          // For Safari
+          image.webkitRequestFullscreen();
+        } else if (image.msRequestFullscreen) {
+          // For IE/Edge
+          image.msRequestFullscreen();
+        }
+      });
+    </script>
+  </body>
+</html>
